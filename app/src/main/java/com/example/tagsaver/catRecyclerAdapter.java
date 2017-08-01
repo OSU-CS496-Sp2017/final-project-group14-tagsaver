@@ -35,6 +35,7 @@ public class catRecyclerAdapter extends RecyclerView.Adapter<catRecyclerAdapter.
     public static final String EXTRA_MESSAGE = "MessageName";
 
 
+
     public catRecyclerAdapter() {
         mCatList = new ArrayList<String>();
     }
@@ -65,7 +66,7 @@ public class catRecyclerAdapter extends RecyclerView.Adapter<catRecyclerAdapter.
     @Override
     public void onBindViewHolder(CatViewHolder holder, int position) {
         String tag = mCatList.get(mCatList.size() - position - 1);
-        holder.bind(tag);
+        holder.bind(tag,1);
     }
 
     public void addTag(String tag){
@@ -76,6 +77,7 @@ public class catRecyclerAdapter extends RecyclerView.Adapter<catRecyclerAdapter.
 
     class CatViewHolder extends RecyclerView.ViewHolder {
         private TextView mCatTextView;
+        private TextView mCatScoreView;
         private Button mEditBtn;
         private Button cpyBtn;
         private ArrayList<CategoryObj> userCatList;
@@ -85,6 +87,8 @@ public class catRecyclerAdapter extends RecyclerView.Adapter<catRecyclerAdapter.
         public CatViewHolder(final View itemView) {
             super(itemView);
             mCatTextView = (TextView)itemView.findViewById(R.id.catTextView);
+            mCatScoreView = (TextView)itemView.findViewById(R.id.scoreTextView);
+
             mEditBtn = (Button)itemView.findViewById(R.id.catEditBtn);
             mEditBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -119,8 +123,10 @@ public class catRecyclerAdapter extends RecyclerView.Adapter<catRecyclerAdapter.
             
         }
 
-        public void bind(String tag) {
+        public void bind(String tag,int score) {
+
             mCatTextView.setText(tag);
+            mCatScoreView.setText(String.valueOf(score));
         }
     }
 }
