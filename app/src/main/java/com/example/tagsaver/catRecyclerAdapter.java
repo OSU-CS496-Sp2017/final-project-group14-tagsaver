@@ -33,9 +33,6 @@ public class catRecyclerAdapter extends RecyclerView.Adapter<catRecyclerAdapter.
 
     private ArrayList<String> mCatList = new ArrayList<>();
     public static final String EXTRA_MESSAGE = "MessageName";
-
-
-
     public catRecyclerAdapter() {
         mCatList = new ArrayList<String>();
     }
@@ -113,6 +110,8 @@ public class catRecyclerAdapter extends RecyclerView.Adapter<catRecyclerAdapter.
                             }
                         }
                     }
+
+
 
                     Context context = v.getContext();
                     ClipboardManager clipboard = (ClipboardManager)context.getSystemService(context.CLIPBOARD_SERVICE);

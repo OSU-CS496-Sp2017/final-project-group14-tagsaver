@@ -138,8 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        int i = 0;
-        for(i = 0; i < userCatList.size(); i++) {
+        for(int i = 0; i < userCatList.size(); i++) {
             if(!alreadyDisp.contains(userCatList.get(i).toString())) {
                 alreadyDisp.add(userCatList.get(i).catName);
                 mCategoriesAdapter.addTag(userCatList.get(i).catName);
